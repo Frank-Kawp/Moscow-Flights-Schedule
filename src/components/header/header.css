@@ -1,0 +1,23 @@
+.header {
+  background-color: #66a1dd;
+
+}
+
+.header-logo {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header a:hover {
+  text-decoration: none;
+}
+
+.header h3 a {
+  padding-left: 20px;
+  /*color: #3c4244;*/
+  color: #ffffff;
+}
+
+.header h3 a:hover {
+  color: #2a5d91;
+}
