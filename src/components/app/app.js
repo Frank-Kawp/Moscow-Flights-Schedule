@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Header from '../header';
 import SearchPanel from '../search-panel';
 import FlightsTable from '../flights-table';
-
 import clientApi from '../../services/clientApi';
 import './app.css';
 
@@ -40,9 +39,7 @@ export default class App extends Component {
   };
 
   searchItem(items, term) {
-    if (term.length === 0) {
-      return items;
-    }
+    if (term.length === 0) return items;
 
     return items.filter(({ flight, direction, carrier }) => {
       const string = `${flight}${direction}${carrier}`;
@@ -70,9 +67,7 @@ export default class App extends Component {
 
   render() {
     const { data, term, filter } = this.state;
-
-    const visibleItems = this.filter(
-        this.searchItem(data, term), filter);
+    const visibleItems = this.filter(this.searchItem(data, term), filter);
 
   	return (
 	    <div className='app'>
@@ -83,7 +78,7 @@ export default class App extends Component {
           onFilterChange={ this.onFilterChange }
         />
 	      <FlightsTable 
-	      	data={ visibleItems }
+	        data={ visibleItems }
 	      />
 	    </div>
 	  );
