@@ -2,7 +2,7 @@ export default class clientApi {
 	_apiBase = 'https://cors-anywhere.herokuapp.com/https://api.rasp.yandex.net/v3.0/schedule/?apikey=4947ef3f-adeb-4221-93ec-743762d9d209&';
 	_nextID = 1001;
 
-	async getResourse(url) {
+	getResourse = async (url) => {
 		const res = await fetch(`${this._apiBase}${url}`);
 
 		if (!res.ok) {
@@ -12,21 +12,21 @@ export default class clientApi {
 		return await res.json();
 	};
 
-	async getAllFlights() {
-		const arrivals = await this.getArrivals();
-		const departures = await this.getDepartures();
-		const result = arrivals.concat(departures);
-		return result;
-	};
-
-	async getArrivals() {
+	getArrivals = async () => {
 		const res = await this.getResourse(`station=s9600213&transport_types=plane&event=arrival`);
 		return this._transformFlights(res);
 	};
 
-	async getDepartures() {
+	getDepartures = async () => {
 		const res = await this.getResourse(`station=s9600213&transport_types=plane&event=departure`);
 		return this._transformFlights(res);
+	};
+
+	getAllFlights = async () => {
+		const arrivals = await this.getArrivals();
+		const departures = await this.getDepartures();
+		const result = arrivals.concat(departures);
+		return result;
 	};
 
 	_transformFlights = (apiData) => {
@@ -40,9 +40,10 @@ export default class clientApi {
 
 			const time = arrival ? arrival : departure;
 			const id = this._nextID += 1;
+			const dayz = 'Расписание: ' + days.length > 150 ? days.slice(0, 59 - 3) + '...' : days;
 
 			return { id, event, time, direction, flight, carrier, vehicle,
-				days: 'Расписание: ' + days.length > 150 ? days.slice(0, 59 - 3) + '...' : days }
+				days: dayz }
 		});
 		return newArray;
 	}

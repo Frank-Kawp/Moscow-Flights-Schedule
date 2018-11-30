@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './filter-buttons.css'
 
 
-
 export default class FilterButtons extends Component {
 
   buttons = [

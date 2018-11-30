@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import clientApi from '../../services/clientApi';
 import Header from '../header';
 import SearchPanel from '../search-panel';
 import FlightsTable from '../flights-table';
 
+import clientApi from '../../services/clientApi';
 import './app.css';
 
 export default class App extends Component {

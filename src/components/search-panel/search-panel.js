@@ -26,7 +26,7 @@ export default class SearchPanel extends Component {
 		      <input
 		        type="text"
 		        className="form-control"
-		        placeholder="Type down flight number, direction or name of a carrier ..."
+		        placeholder="Search by number, direction or name of a carrier ..."
 		        value={ this.state.term }
 				onChange={ this.onSearchChange }
 		      />

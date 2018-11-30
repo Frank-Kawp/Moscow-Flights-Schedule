@@ -7,7 +7,9 @@ import './flights-table.css';
 const FightsTable = ({ data }) => {
   if (!data) { return (<Spinner />); }
 
-  const users = data.map(({ id, event, time, direction, flight, carrier, vehicle, days }) => {
+  const users = data.map(({ id, event, time, 
+    direction, flight, carrier, vehicle, days }) => {
+
     return (<FlightItem  
       event={event} 
       time={time} 
@@ -42,4 +44,3 @@ const FightsTable = ({ data }) => {
 };
 
 export default FightsTable;
-
