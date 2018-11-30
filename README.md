@@ -1,6 +1,7 @@
 ### Moscow-Flights-Schedule
 
-Run application: npm start
+Dev mode: npm start
+Prod. mode: npm run build
 
 [![Build Status](https://travis-ci.org/Frank-Kawp/Moscow-Flights-Schedule.svg?branch=master)](https://travis-ci.org/Frank-Kawp/Moscow-Flights-Schedule)
 
