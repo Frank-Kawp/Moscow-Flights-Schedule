@@ -1,8 +1,3 @@
-.header {
-  background-color: #66a1dd;
-
-}
-
 .header-logo {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -14,10 +9,9 @@
 
 .header h3 a {
   padding-left: 20px;
-  /*color: #3c4244;*/
-  color: #ffffff;
+  color: #6C7A89;
 }
 
 .header h3 a:hover {
-  color: #2a5d91;
+  color: #22A7F0;
 }

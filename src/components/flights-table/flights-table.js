@@ -21,8 +21,8 @@ const FightsTable = ({ data }) => {
   });
 
   return (
-    <table className="flights-table user-list table table-striped">
-      <thead>
+    <table className="flights-table user-list table table-hover">
+      <thead className='thead-light'>
         <tr className='table-header'>
           <th>Event</th>
           <th>Time</th>

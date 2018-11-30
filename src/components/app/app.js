@@ -7,7 +7,7 @@ import FlightsTable from '../flights-table';
 import './app.css';
 
 export default class App extends Component {
-  getDataFromServer = new clientApi();
+  getData = new clientApi();
 
   state = {
   	data: null,
@@ -26,7 +26,7 @@ export default class App extends Component {
   };
 
   loadData() {
-  	this.getDataFromServer.getAllFlights()
+  	this.getData.getAllFlights()
   		.then((data) => {
   			this.setState({
   				data: data
