@@ -15,10 +15,15 @@ export default class App extends Component {
     filter: 'all'
   };
 
-  constructor() {
-		super();
-		this.loadData();
-	}
+  componentDidMount() {
+    this.loadData();
+  };
+
+  onError = (err) => {
+    this.setState({
+      data: null
+    });
+  };
 
   loadData() {
   	this.getDataFromServer.getAllFlights()
@@ -26,7 +31,8 @@ export default class App extends Component {
   			this.setState({
   				data: data
   			});
-  		});
+  		})
+      .catch(this.onError);
   };
 
   onSearchChange = (term) => {

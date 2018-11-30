@@ -29,7 +29,7 @@ export default class clientApi {
 		return this._transformFlights(res);
 	};
 
-	_transformFlights(apiData) {
+	_transformFlights = (apiData) => {
 		const event = apiData.event === 'arrival' ? 'Прибытие' : 'Отправление';
 		const coll = apiData.schedule.slice();
 
