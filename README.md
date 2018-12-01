@@ -1,6 +1,4 @@
-### Moscow-Flights-Schedule
-
-## This app shows you schedule for Moscow flights.
+## This app shows schedule for Moscow flights.
 
 To run app in dev. mode: npm start
 
