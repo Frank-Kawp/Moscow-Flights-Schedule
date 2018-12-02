@@ -1,31 +1,35 @@
-import React from 'react';
-import FlightItem from '../flight-item';
-import Spinner from '../spinner';
+import React from "react";
+import FlightItem from "../flight-item";
+import Spinner from "../spinner";
 
-import './flights-table.css';
+import "./flights-table.css";
 
 const FightsTable = ({ data }) => {
-  if (!data) { return (<Spinner />); }
+  if (!data) {
+    return <Spinner />;
+  }
 
-  const users = data.map(({ id, event, time, 
-    direction, flight, carrier, vehicle, days }) => {
-
-    return (<FlightItem  
-      event={event} 
-      time={time} 
-      direction={ direction }
-      flight={ flight }
-      carrier={ carrier }
-      vehicle={ vehicle }
-      days={ days }
-      key={ id } 
-    />);
-  });
+  const users = data.map(
+    ({ id, event, time, direction, flight, carrier, vehicle, days }) => {
+      return (
+        <FlightItem
+          event={event}
+          time={time}
+          direction={direction}
+          flight={flight}
+          carrier={carrier}
+          vehicle={vehicle}
+          days={days}
+          key={id}
+        />
+      );
+    }
+  );
 
   return (
     <table className="flights-table user-list table table-hover">
-      <thead className='thead-light'>
-        <tr className='table-header'>
+      <thead className="thead-light">
+        <tr className="table-header">
           <th>Event</th>
           <th>Time</th>
           <th>Directioin</th>
@@ -36,9 +40,7 @@ const FightsTable = ({ data }) => {
         </tr>
       </thead>
 
-      <tbody>
-        { users }
-      </tbody>
+      <tbody>{users}</tbody>
     </table>
   );
 };

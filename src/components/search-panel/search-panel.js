@@ -1,22 +1,21 @@
-import React, { Component } from 'react';
-import FilterButtons from '../filter-buttons';
+import React, { Component } from "react";
+import FilterButtons from "../filter-buttons";
 
-import './search-panel.css'
+import "./search-panel.css";
 
 export default class SearchPanel extends Component {
-
   state = {
-    term: '',
+    term: "",
     filter: this.props.filter
   };
 
-  onSearchChange = (e) => {
+  onSearchChange = e => {
     const term = e.target.value;
     this.setState({ term });
     this.props.onSearchChange(term);
   };
 
-  onFilterChange = (filter) => {
+  onFilterChange = filter => {
     this.props.onFilterChange(filter);
   };
 
@@ -27,14 +26,14 @@ export default class SearchPanel extends Component {
           type="text"
           className="form-control"
           placeholder="Search by number, direction or name of a carrier ..."
-          value={ this.state.term }
-          onChange={ this.onSearchChange }
-          />
-          <FilterButtons 
-            filter={ this.props.filter }
-            onFilterChange={ this.onFilterChange }
-          />
-        </div>
-       );
-    }
-};
+          value={this.state.term}
+          onChange={this.onSearchChange}
+        />
+        <FilterButtons
+          filter={this.props.filter}
+          onFilterChange={this.onFilterChange}
+        />
+      </div>
+    );
+  }
+}
