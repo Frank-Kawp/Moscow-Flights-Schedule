@@ -2,9 +2,16 @@ import React, { Component } from "react";
 import Header from "../header";
 import SearchPanel from "../search-panel";
 import FlightsTable from "../flights-table";
+import FilterButtons from "../filter-buttons";
+
 import clientApi from "../../services/clientApi";
+import whyDidYouUpdate from "why-did-you-update";
 
 import "./app.css";
+
+if (process.env.NODE_ENV !== "production") {
+  whyDidYouUpdate(React);
+}
 
 export default class App extends Component {
   getData = new clientApi();
@@ -73,11 +80,16 @@ export default class App extends Component {
     return (
       <div className="app">
         <Header />
-        <SearchPanel
-          filter={this.state.filter}
-          onSearchChange={this.onSearchChange}
-          onFilterChange={this.onFilterChange}
-        />
+
+        <div className="search-and-buttons">
+          <SearchPanel onSearchChange={this.onSearchChange} />
+
+          <FilterButtons
+            filter={this.state.filter}
+            onFilterChange={this.onFilterChange}
+          />
+        </div>
+
         <FlightsTable data={visibleItems} />
       </div>
     );

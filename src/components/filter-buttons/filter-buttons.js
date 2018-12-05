@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import "./filter-buttons.css";
 
-export default class FilterButtons extends Component {
+export default class FilterButtons extends PureComponent {
   buttons = [
     { name: "all", label: "All Flights" },
     { name: "departures", label: "Departures" },
