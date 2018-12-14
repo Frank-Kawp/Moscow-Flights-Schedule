@@ -11,6 +11,6 @@ serve -s build
 
 ### Heroku example:
 
-https://moscow-flights.herokuapp.com 
+https://moscow-flightz.herokuapp.com 
 
 [![Build Status](https://travis-ci.com/Frank-Kawp/Brain-Games.svg?branch=master)](https://travis-ci.com/Frank-Kawp/Brain-Games)
